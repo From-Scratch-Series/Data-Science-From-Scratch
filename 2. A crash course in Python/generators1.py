@@ -47,3 +47,22 @@ print(next(primes))
 print(next(primes))
 print(next(primes))
 #we can use for loop to generate all values from the generator
+
+print('-'*30)
+
+def generate_nums():
+    num = 0
+    print('before entering loop')
+    while True:
+        print('before yield')
+        yield num
+        num += 1
+        print('after yield, number incremented')
+
+nums = generate_nums()
+print(next(nums))
+print('-'*30)
+print(next(nums)) #first increment is done here
+print('-'*30)
+print(next(nums))
+
